@@ -1,7 +1,8 @@
 module.exports = {
     add,
     findBy,
-    getAll
+    getAll,
+    remove
 }
 
 const db = require('../data/db-config');
@@ -16,4 +17,8 @@ function findBy(username){
 
 function getAll(){
     return db('users');
+}
+
+function remove (id){
+    return db('users').where({id}).del();
 }
