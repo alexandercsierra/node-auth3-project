@@ -9,7 +9,7 @@ const checkRole = require('./config/checkRole')
 server.use(helmet());
 server.use(express.json());
 server.use('/auth', authRouter)
-server.use('/users', restricted, checkRole('hr'), userRouter)
+server.use('/users', restricted, userRouter)
 
 server.get('/', (req, res)=>{
     res.status(200).json({message:'welcome to the server'})
